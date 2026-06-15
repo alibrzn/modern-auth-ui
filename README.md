@@ -20,11 +20,11 @@ A beautiful and responsive authentication interface featuring Login & Registrati
 
 ### Login Page
 
-<img src="src/assets/Screenshot 2026-06-15 193348.png" width="100%">
+<img src="src/assets/Screenshot 2026-06-15 193348.png" width="80%" height="auto">
 
 ### Register Page
 
-<img src="src/assets/Screenshot 2026-06-15 193403.png" width="100%">
+<img src="src/assets/Screenshot 2026-06-15 193403.png" width="200px" height="auto">
 
 ---
 
