@@ -1,31 +1,132 @@
 @reference "tailwindcss";
 
+@font-face {
+    font-family: Iran;
+    src: url('../public/font/IRANSansX-DemiBold.woff') format(woff);
+}
+@font-face {
+    font-family: IranNumber;
+    src:  url('../public/font/IRANSansXFaNum-DemiBold.woff') format(woff);
+}
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+}
+
 body {
     @apply bg-amber-50
 }
-.img-icons {
-    @apply w-4 h-auto
+* {
+    font-family: Iran;
+    /* border: solid 1px red; */
 }
-.Taskfalse {
-    @apply flex flex-row-reverse gap-4 items-center justify-between pt-3 pb-3 pr-4 pl-4 bg-red-400 w-9/12 h-auto rounded-2xl
-            shadow-lg drop-shadow-sm drop-shadow-red-950 shadow-red-300 transition-all duration-300 ease-in-out scale-100
-            transition-discrete starting:scale-50
-             hover:shadow-red-200
+.h1Customized {
+    @apply text-5xl font-bold max-md:text-2xl
 }
-.Tasktrue {
-    @apply flex flex-row-reverse gap-4 items-center justify-between pt-3 pb-3 pr-4 pl-4 bg-sky-400 w-9/12 h-auto rounded-2xl
-            shadow-lg drop-shadow-sm drop-shadow-sky-950 shadow-sky-300 transition-all duration-150 ease-in-out
-             hover:shadow-sky-200
+
+.fontIranNumber{
+    font-family: IranNumber;
 }
-.imgDone {
-    @apply z-50 cursor-pointer transition-all ease-in duration-150 hover:-translate-y-0.5
+.divMain {
+    @apply flex flex-col gap-8 justify-center items-center w-full mt-8 p-2
 }
-.imgdel {
-    @apply z-50 cursor-pointer transition-all ease-in duration-150 hover:-translate-y-0.5
+.ParentFormandSidebar {
+    @apply flex flex-row-reverse justify-center w-full max-md:flex-col max-md:items-center
 }
-.ptrue {
-    @apply text-center line-through text-gray-700
+.formON {
+    @apply flex flex-col justify-center items-center gap-15 w-2/4 pt-10 pb-10 
+    bg-emerald-50 rounded-r-4xl shadow-2xl
+    transition-all ease-in delay-75 translate-x-0 starting:-translate-x-120
+    max-md:z-100 max-md:w-9/12 max-md:rounded-b-xl max-md:rounded-t-none
+    max-md:gap-10
 }
-.pfalse {
-    @apply text-center
+.formOFF {
+    @apply hidden
+}
+.sidebar {
+    @apply bg-emerald-600/80 w-1/3 flex flex-col justify-center items-center gap-8 
+    rounded-l-2xl pt-4 pb-4
+    z-50 relative max-md:w-9/12 max-md:rounded-t-2xl max-md:rounded-b-none
+}
+.btnSidebar {
+    @apply text-emerald-50 border-2 border-emerald-50
+        rounded-2xl pt-2 pb-2 pr-4 pl-4 
+        transition-all hover:cursor-pointer hover:bg-emerald-50 hover:text-emerald-700
+        max-md:p-1
+}
+.iconSocial {
+    @apply border-1 border-gray-400 rounded-full p-1.5 transition-all ease-in delay-100 cursor-pointer hover:bg-gray-300
+}
+.label {
+    @apply text-right relative w-50 rounded-2xl pr-2 right-1 -z-10 text-gray-500 text-sm  transition-all delay-75 ease-in
+}
+.input {
+    @apply absolute border-2 rounded-2xl text-right pt-2 pb-2 pr-4 pl-4 border-emerald-600 
+    focus:border-emerald-700 pr-10
+}
+.input:focus {
+    @apply  shadow-lg shadow-emerald-500
+}
+.input:focus ~.label {
+    @apply text-sm -translate-y-7 bg-emerald-50 z-0 pl-2 pr-2 rounded-xl p-0.5 shadow-lg shadow-emerald-600 bg-emerald-500 text-white
+}
+.inputFilled {
+    @apply text-sm -translate-y-7 bg-emerald-50 z-0 pl-1 pr-1 rounded-xl p-0.5 shadow-sm shadow-emerald-500 bg-emerald-400 text-white
+}
+.iconInput {
+    @apply relative right-0
+}
+.btnClickForm {
+    @apply bg-emerald-500 text-white w-50
+        rounded-2xl pt-2 pb-2 pr-4 pl-4 drop-shadow-lg drop-shadow-emerald-400 
+        transition-all hover:bg-emerald-600 drop-shadow-emerald-900 cursor-pointer
+}
+.SectionErrorFormSign {
+    @apply bg-red-600/80
+    flex flex-col justify-center items-center gap-6
+    rounded-xl p-2
+    absolute top-1/4 w-10/12 h-1/3 
+    transition-all duration-300 ease-in-out scale-100
+        transition-discrete starting:scale-2
+}
+.SectionErrorFormSign p {
+    @apply text-3xl text-center text-white
+}
+.SectionErrorFormSign button {
+    @apply bg-green-600 rounded-lg pr-3 pl-3 pt-1 pb-1
+    text-white shadow-xs shadow-gray-800 text-xl
+    transition-all delay-100 ease-linear
+    hover:cursor-pointer hover:bg-green-700
+}
+.SectionConfirmFormSign {
+    @apply bg-green-700/80
+    flex flex-col justify-center items-center gap-6
+    rounded-xl p-2
+    absolute top-1/4 w-10/12 h-1/3
+    transition-all duration-300 ease-in-out scale-100
+        transition-discrete starting:scale-2
+}
+.SectionConfirmFormSign p {
+    @apply text-3xl text-center text-white
+}
+.SectionConfirmFormSign button {
+    @apply bg-red-500 rounded-lg pr-3 pl-3 pt-1 pb-1
+    text-white shadow-xs shadow-gray-800 text-xl
+    transition-all delay-100 ease-linear
+    hover:cursor-pointer hover:bg-red-600
+}
+
+.listPrintUsers {
+    @apply rounded-2xl w-96 text-right pt-2 pb-2 pr-4 pl-4 
+    bg-emerald-600 text-amber-50 shadow-lg shadow-emerald-600 
+    flex flex-row justify-between translate-0 starting:-translate-x-100 
+    transition-all duration-300 ease-in-out
 }
